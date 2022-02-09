@@ -41,6 +41,10 @@
 
          <br><br>
 
+         <input type="datetime-local" name="birthdaytime">
+
+         <br><br>
+
          Gender:
          <input type="radio" name="gender" value="">
          Male
@@ -68,27 +72,35 @@
 
          <br><br>
 
+         <input type="range" id="vol" name="vol" min="0" max="50">
+
+         <br><br>
+
+         <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+         <br><br>
+
          Message:
          <br>
          <textarea name="" id="" cols="30" rows="5" placeholder="Enter Your Message" name="message"></textarea>
 
          <br><br>
 
+         Choose Your Favourite Color:
+         <input type="color" name="color">
+
+         <br><br>
 
 
+         <input type="file" name="file">
 
+         <br><br>
 
+         <!-- <input type="hidden" name="hidden" value="fdskaj"> -->
 
+         <input type="image" src="https://images.unsplash.com/photo-1556376291-64b0b8a10397?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Submit" width="200" height="200">
 
-
-
-
-
-
-
-
-
-
+         <br><br>
 
          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
          &nbsp; &nbsp; &nbsp;&nbsp;
