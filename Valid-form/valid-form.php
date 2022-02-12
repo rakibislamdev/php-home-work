@@ -43,11 +43,6 @@ function test_input($data)
 ?>
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,7 +64,7 @@ function test_input($data)
             <h2>Valid Form</h2>
             <div class="mt-2 mb-2">
                 <label for="fname">First Name :</label>
-                <input type="text" class="form-control" name="fname" id="stName" placeholder="Enter Your first name" value="">
+                <input type="text" class="form-control" name="fname" placeholder="Enter Your first name" value="">
 
                 <p class="text-danger mt-2 text-capitalize">
                     <?php echo $error['fname'] ?? '' ?>
@@ -77,7 +72,7 @@ function test_input($data)
             </div>
             <div class="mt-2 mb-2">
                 <label for="lname">Last Name :</label>
-                <input type="text" class="form-control" name="lname" id="fName" placeholder="Enter your last name" value="">
+                <input type="text" class="form-control" name="lname" placeholder="Enter your last name" value="">
 
                 <p class="text-danger mt-2 text-capitalize">
                     <?php echo $error['lname'] ?? '' ?>
@@ -85,7 +80,7 @@ function test_input($data)
             </div>
             <div class="mt-2 mb-2">
                 <label for="email">Email Address :</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Student's Email Address" value="">
+                <input type="email" class="form-control" name="email" placeholder="Enter Student's Email Address" value="">
 
                 <p class="text-danger mt-2 text-capitalize">
                     <?php echo $error['email'] ?? '' ?>
@@ -93,7 +88,7 @@ function test_input($data)
             </div>
             <div class="mt-2 mb-2">
                 <label for="password">Password :</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" value="">
+                <input type="password" class="form-control" name="password" placeholder="Enter your password" value="">
                 <p class="text-danger mt-2 text-capitalize">
                     <?php echo $error['password'] ?? '' ?>
                 </p>
@@ -101,24 +96,24 @@ function test_input($data)
             <div class="mt-2 mb-2">
                 <label for="gender">Gender :</label>
 
-                <input type="radio" name="gender" id="male" value="male">
+                <input type="radio" name="gender" value="male">
                 <label for="male">Male</label>
 
-                <input type="radio" name="gender" id="female" value="female">
+                <input type="radio" name="gender" value="female">
                 <label for="female">Female</label>
 
-                <input type="radio" name="gender" id="others" value="others">
+                <input type="radio" name="gender" value="others">
                 <label for="others">Others</label>
             </div>
             <div class="mt-2 mb-2">
                 <label for="age" class="">Age :</label>
-                <input type="number" class="form-control" name="age" id="age" placeholder="Enter your age" value="">
+                <input type="number" class="form-control" name="age" placeholder="Enter your age" value="">
             </div>
 
             <div class="mt-2 mb-2">
                 <label for="department" class="">Choose Your Occupation :</label>
                 <br>
-                <select name="department" id="department" class="form-select  ">
+                <select name="department" class="form-select  ">
                     <option value="select" selected></option>
                     <option value="student">Student</option>
                     <option value="doctor">Doctor</option>
@@ -127,22 +122,22 @@ function test_input($data)
                 </select>
             </div>
             <div class="mt-2 mb-2">
-                <label for="fav_language">Favourite Subject :</label>
+                <label for="fav_subject">Favourite Subject :</label>
                 <br>
-                <input type="checkbox" name="language[]" value="bangla" id="">
+                <input type="checkbox" name="fav_subject[]" value="bangla">
                 <label for="php">Bangla</label><br>
-                <input type="checkbox" name="language[]" value="mathmatics" id="">
-                <label for="phython">Mathmatics</label><br>
-                <input type="checkbox" name="language[]" value="physics" id="java">
-                <label for="java">Physics</label><br>
-                <input type="checkbox" name="language[]" value="chemistry" id="c++">
-                <label for="c++">Chemistry</label><br>
-                <input type="checkbox" name="language[]" value="socisl science#" id="c#">
-                <label for="c#">Social Science</label><br>
+                <input type="checkbox" name="fav_subject[]" value="mathmatics">
+                <label for="math">Mathmatics</label><br>
+                <input type="checkbox" name="fav_subject[]" value="physics">
+                <label for="physics">Physics</label><br>
+                <input type="checkbox" name="fav_subject[]" value="chemistry">
+                <label for="chemistry">Chemistry</label><br>
+                <input type="checkbox" name="fav_subject[]" value="socisl science">
+                <label for="s_science">Social Science</label><br>
             </div>
             <div class="mt-2 mb-2">
                 <label for="message">Message :</label>
-                <textarea name="comment" id="comment" cols="30" rows="5" class="form-control"></textarea>
+                <textarea name="comment" cols="30" rows="5" class="form-control"></textarea>
             </div>
             <div class="button mt-3 mb-2">
                 <input type="submit" value="Submit" class="s_btn">
