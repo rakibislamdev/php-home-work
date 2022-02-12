@@ -56,96 +56,121 @@ function test_input($data)
 </head>
 
 <body>
-    <!-- navbar area start  -->
-    <!-- navbar area end  -->
-    <!-- container area start  -->
-    <div class="form">
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-            <h2>Valid Form</h2>
-            <div class="mt-2 mb-2">
-                <label for="fname">First Name :</label>
-                <input type="text" class="form-control" name="fname" placeholder="Enter Your first name" value="">
+    <div class="container-fluid">
 
-                <p class="text-danger mt-2 text-capitalize">
-                    <?php echo $error['fname'] ?? '' ?>
-                </p>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="lname">Last Name :</label>
-                <input type="text" class="form-control" name="lname" placeholder="Enter your last name" value="">
+        <!-- navbar area start  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="logo">
+                    <a class="navbar-brand" href="#">Valid Form</a>
+                </div>
+                <div class="nav_menu">
+                    <ul class="list-unstyled nav justify-content-center">
+                        <li class="d-inline"><a href="" class="text-decoration-none text-center px-2 text-dark">Home</a></li>
+                        <li class="d-inline"><a href="" class="text-decoration-none text-center px-2 text-dark">Abut</a></li>
+                        <li class="d-inline"><a href="" class="text-decoration-none text-center px-2 text-dark">Contact Us</a></li>
+                        <li class="d-inline"><a href="" class="text-decoration-none text-center px-2 text-dark">Service</a></li>
+                    </ul>
+                </div>
 
-                <p class="text-danger mt-2 text-capitalize">
-                    <?php echo $error['lname'] ?? '' ?>
-                </p>
             </div>
-            <div class="mt-2 mb-2">
-                <label for="email">Email Address :</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter Student's Email Address" value="">
+        </nav>
+        <!-- navbar area end  -->
+        <!-- container area start  -->
+        <div class="form">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <h2>Valid Form</h2>
+                <div class="mt-2 mb-2">
+                    <label for="fname">First Name :</label>
+                    <input type="text" class="form-control" name="fname" placeholder="Enter Your first name" value="">
 
-                <p class="text-danger mt-2 text-capitalize">
-                    <?php echo $error['email'] ?? '' ?>
-                </p>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="password">Password :</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter your password" value="">
-                <p class="text-danger mt-2 text-capitalize">
-                    <?php echo $error['password'] ?? '' ?>
-                </p>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="gender">Gender :</label>
+                    <p class="text-danger mt-2 text-capitalize">
+                        <?php echo $error['fname'] ?? '' ?>
+                    </p>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="lname">Last Name :</label>
+                    <input type="text" class="form-control" name="lname" placeholder="Enter your last name" value="">
 
-                <input type="radio" name="gender" value="male">
-                <label for="male">Male</label>
+                    <p class="text-danger mt-2 text-capitalize">
+                        <?php echo $error['lname'] ?? '' ?>
+                    </p>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="email">Email Address :</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter Student's Email Address" value="">
 
-                <input type="radio" name="gender" value="female">
-                <label for="female">Female</label>
+                    <p class="text-danger mt-2 text-capitalize">
+                        <?php echo $error['email'] ?? '' ?>
+                    </p>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password" value="">
+                    <p class="text-danger mt-2 text-capitalize">
+                        <?php echo $error['password'] ?? '' ?>
+                    </p>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="gender">Gender :</label>
 
-                <input type="radio" name="gender" value="others">
-                <label for="others">Others</label>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="age" class="">Age :</label>
-                <input type="number" class="form-control" name="age" placeholder="Enter your age" value="">
-            </div>
+                    <input type="radio" name="gender" value="male">
+                    <label for="male">Male</label>
 
-            <div class="mt-2 mb-2">
-                <label for="department" class="">Choose Your Occupation :</label>
-                <br>
-                <select name="department" class="form-select  ">
-                    <option value="select" selected></option>
-                    <option value="student">Student</option>
-                    <option value="doctor">Doctor</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="engineer">Engineer</option>
-                </select>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="fav_subject">Favourite Subject :</label>
-                <br>
-                <input type="checkbox" name="fav_subject[]" value="bangla">
-                <label for="php">Bangla</label><br>
-                <input type="checkbox" name="fav_subject[]" value="mathmatics">
-                <label for="math">Mathmatics</label><br>
-                <input type="checkbox" name="fav_subject[]" value="physics">
-                <label for="physics">Physics</label><br>
-                <input type="checkbox" name="fav_subject[]" value="chemistry">
-                <label for="chemistry">Chemistry</label><br>
-                <input type="checkbox" name="fav_subject[]" value="socisl science">
-                <label for="s_science">Social Science</label><br>
-            </div>
-            <div class="mt-2 mb-2">
-                <label for="message">Message :</label>
-                <textarea name="comment" cols="30" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="button mt-3 mb-2">
-                <input type="submit" value="Submit" class="s_btn">
-                <input type="reset" value="Reset" class="r_btn">
-            </div>
-        </form>
+                    <input type="radio" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" name="gender" value="others">
+                    <label for="others">Others</label>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="age" class="">Age :</label>
+                    <input type="number" class="form-control" name="age" placeholder="Enter your age" value="">
+                </div>
+
+                <div class="mt-2 mb-2">
+                    <label for="department" class="">Choose Your Occupation :</label>
+                    <br>
+                    <select name="department" class="form-select  ">
+                        <option value="select" selected></option>
+                        <option value="student">Student</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="engineer">Engineer</option>
+                    </select>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="fav_subject">Favourite Subject :</label>
+                    <br>
+                    <input type="checkbox" name="fav_subject[]" value="bangla">
+                    <label for="php">Bangla</label><br>
+                    <input type="checkbox" name="fav_subject[]" value="mathmatics">
+                    <label for="math">Mathmatics</label><br>
+                    <input type="checkbox" name="fav_subject[]" value="physics">
+                    <label for="physics">Physics</label><br>
+                    <input type="checkbox" name="fav_subject[]" value="chemistry">
+                    <label for="chemistry">Chemistry</label><br>
+                    <input type="checkbox" name="fav_subject[]" value="socisl science">
+                    <label for="s_science">Social Science</label><br>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="message">Message :</label>
+                    <textarea name="comment" cols="30" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="button mt-3 mb-2">
+                    <input type="submit" value="Submit" class="s_btn">
+                    <input type="reset" value="Reset" class="r_btn">
+                </div>
+            </form>
+        </div>
+
+        <!-- footer  area start -->
+        <div class="footer bg-dark text-white">
+            <p class="text-center p-3
+        ">&copy; all right reserved by <a href="" class="text-decoration-none">Rakib</a></p>
+        </div>
+
     </div>
-
 
 
 

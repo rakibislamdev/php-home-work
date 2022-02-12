@@ -1,5 +1,6 @@
 body {
-    padding: 42px;
+    /* padding: auto; */
+
 }
 
 form{
@@ -8,7 +9,7 @@ form{
     background: rgb(195, 218, 161);
 }
 
-input{
+.form input{
     margin-top: 10px;
 }
 
