@@ -1,7 +1,44 @@
 <?php
-echo ("<pre>");
-print_r($_POST);
-echo ("</pre>");
+$error = [];
+if ($_POST) {
+    $name_pattern = '/^[a-zA-Z-\' ]*$/';
+    $email_pattern = '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/';
+    // $pass_pattern = '/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/';
+
+    $uppercase = preg_match('@[A-Z]@', ($_POST['password']));
+    $lowercase = preg_match('@[a-z]@', ($_POST['password']));
+    $number    = preg_match('@[0-9]@', ($_POST['password']));
+
+
+    if (!preg_match($name_pattern, ($_POST['fname']))) {
+        $error['fname'] = 'Please enter a valid name';
+    }
+    if (!preg_match($name_pattern, ($_POST['lname']))) {
+        $error['lname'] = 'Please enter a valid name';
+    }
+    if (!preg_match($email_pattern, ($_POST['email']))) {
+        $error['email'] = 'Please enter a valid email';
+    }
+
+    if (!$uppercase || !$lowercase || !$number || strlen($_POST['password']) < 8) {
+        $error['password'] = 'Please enter at least 8 character';
+    }
+
+    echo ("<pre>");
+    print_r($_POST);
+    echo ("</pre>");
+}
+
+
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 
 ?>
 
@@ -28,23 +65,38 @@ echo ("</pre>");
     <!-- navbar area end  -->
     <!-- container area start  -->
     <div class="form">
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <h2>Valid Form</h2>
             <div class="mt-2 mb-2">
                 <label for="fname">First Name :</label>
-                <input type="text" class="form-control" name="stName" id="stName" placeholder="Enter Your first name" value="">
+                <input type="text" class="form-control" name="fname" id="stName" placeholder="Enter Your first name" value="">
+
+                <p class="text-danger mt-2 text-capitalize">
+                    <?php echo $error['fname'] ?? '' ?>
+                </p>
             </div>
             <div class="mt-2 mb-2">
                 <label for="lname">Last Name :</label>
-                <input type="text" class="form-control" name="fName" id="fName" placeholder="Enter your last name" value="">
+                <input type="text" class="form-control" name="lname" id="fName" placeholder="Enter your last name" value="">
+
+                <p class="text-danger mt-2 text-capitalize">
+                    <?php echo $error['lname'] ?? '' ?>
+                </p>
             </div>
             <div class="mt-2 mb-2">
                 <label for="email">Email Address :</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Enter Student's Email Address" value="">
+
+                <p class="text-danger mt-2 text-capitalize">
+                    <?php echo $error['email'] ?? '' ?>
+                </p>
             </div>
             <div class="mt-2 mb-2">
                 <label for="password">Password :</label>
                 <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" value="">
+                <p class="text-danger mt-2 text-capitalize">
+                    <?php echo $error['password'] ?? '' ?>
+                </p>
             </div>
             <div class="mt-2 mb-2">
                 <label for="gender">Gender :</label>
@@ -77,15 +129,15 @@ echo ("</pre>");
             <div class="mt-2 mb-2">
                 <label for="fav_language">Favourite Subject :</label>
                 <br>
-                <input type="checkbox" name="language[]" value="php" id="">
+                <input type="checkbox" name="language[]" value="bangla" id="">
                 <label for="php">Bangla</label><br>
-                <input type="checkbox" name="language[]" value="phython" id="">
+                <input type="checkbox" name="language[]" value="mathmatics" id="">
                 <label for="phython">Mathmatics</label><br>
-                <input type="checkbox" name="language[]" value="java" id="java">
+                <input type="checkbox" name="language[]" value="physics" id="java">
                 <label for="java">Physics</label><br>
-                <input type="checkbox" name="language[]" value="c++" id="c++">
+                <input type="checkbox" name="language[]" value="chemistry" id="c++">
                 <label for="c++">Chemistry</label><br>
-                <input type="checkbox" name="language[]" value="c#" id="c#">
+                <input type="checkbox" name="language[]" value="socisl science#" id="c#">
                 <label for="c#">Social Science</label><br>
             </div>
             <div class="mt-2 mb-2">
